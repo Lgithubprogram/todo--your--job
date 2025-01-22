@@ -82,14 +82,15 @@ The application uses a `Todo` table in the database with the following schema:
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/Lgithubprogram/todo--your--job.git
+   cd todo--your--job
    ```
 
 2. Create and activate a virtual environment:
    ```bash
-   python -m venv fastapi_env
-   source fastapi_env/bin/activate  # On Windows: fastapi_env\Scripts\activate
+    conda create -n your_env_name python = 3.12
+    conda activate your_env_name 
+    conda activate your_env_name
    ```
 
 3. Install dependencies:
@@ -143,6 +144,3 @@ The application will be available at [http://127.0.0.1:8000](http://127.0.0.1:80
 
 Feel free to fork this repository and submit pull requests. Contributions are welcome!
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
