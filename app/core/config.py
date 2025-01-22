@@ -1,26 +1,22 @@
-# app/core/config.py
 from pydantic_settings import BaseSettings
+from typing import List, Dict
+from dotenv import load_dotenv
+load_dotenv()  # 这会确保从 .env 文件加载环境变量
 
 
 class Settings(BaseSettings):
     API_VERSION: str = "1.0.0"
-    CONTACT: dict = {
-        "name": "KtechHub FastAPI Demo",
-        "url": "https://www.ktechhub.com/",
-        "email": "info@ktechhub.com",
+    CONTACT: Dict[str, str] = {
+        "name": "TODOJOB FastAPI Demo",
+        "url": "https://github.com/Lgithubprogram?tab=repositories",
+        "email": "2080994407@qq.com",
     }
-
     ENV: str = "dev"
+    RELOAD: bool = True if ENV == "dev" else False
+    LOG_LEVEL: str = "debug" if ENV == "dev" else "info"
+    ALLOWED_HOSTS: List[str] = ["*"]
 
-    if ENV == "dev":
-        RELOAD: bool = True
-        LOG_LEVEL: str = "debug"
-    else:
-        RELOAD: bool = False
-        LOG_LEVEL: str = "info"
-
-    ALLOWED_HOSTS: list = ["*"]
-
+    # Database settings
     DB_USER: str
     DB_PASSWORD: str
     DB_HOST: str
@@ -28,7 +24,7 @@ class Settings(BaseSettings):
     DB_NAME: str
 
     class Config:
-        env_file = "./.env"
+        env_file = ".env"  # Make sure this points to your .env file
         extra = "ignore"
 
 

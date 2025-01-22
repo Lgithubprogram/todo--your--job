@@ -1,8 +1,8 @@
-"""empty message
+"""Add task_name to todos
 
-Revision ID: 3e806627f107
-Revises: a4d1ef99ffe1
-Create Date: 2023-11-17 22:50:46.358181
+Revision ID: 8458b05b11e3
+Revises: 
+Create Date: 2025-01-22 23:32:40.962975
 
 """
 from typing import Sequence, Union
@@ -12,8 +12,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = "3e806627f107"
-down_revision: Union[str, None] = "a4d1ef99ffe1"
+revision: str = '8458b05b11e3'
+down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 

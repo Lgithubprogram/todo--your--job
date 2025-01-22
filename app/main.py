@@ -14,7 +14,7 @@ app = FastAPI(
     description=description_text,
     version=settings.API_VERSION,
     contact=settings.CONTACT,
-    terms_of_service="https://www.ktechhub.com/terms/",
+    terms_of_service="https://github.com/Lgithubprogram?tab=repositories",
 )
 
 app.add_middleware(

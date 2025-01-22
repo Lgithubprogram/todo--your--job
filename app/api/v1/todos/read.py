@@ -11,8 +11,8 @@ router = APIRouter()
 
 @router.get("/todos/", response_model=List[TodoSchema])
 async def read_todos(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-    todos = db.query(Todo).offset(skip).limit(limit).all()
-    return todos
+    todojobs = db.query(Todo).offset(skip).limit(limit).all()
+    return todojobs
 
 
 @router.get("/todos/{id}", response_model=TodoSchema)

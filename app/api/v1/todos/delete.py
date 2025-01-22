@@ -10,7 +10,7 @@ router = APIRouter()
 @router.delete("/todos/{id}")
 async def delete_todo(id: int, db: Session = Depends(get_db)):
     """
-    Delete a todo.
+    Delete a todojob.
     """
     db_todo = db.query(Todo).filter(Todo.id == id).first()
 
@@ -20,4 +20,4 @@ async def delete_todo(id: int, db: Session = Depends(get_db)):
     db.delete(db_todo)
     db.commit()
 
-    return {"message": "Todo deleted successfully"}
+    return {"message": "Todojob  deleted successfully"}

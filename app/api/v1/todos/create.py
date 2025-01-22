@@ -13,13 +13,16 @@ router = APIRouter()
 @router.post("/todos/", response_model=TodoResponse)
 async def create_todo(todo: TodoCreate, db: Session = Depends(get_db)):
     """
-    Create a new todo.
+    Create a new todojob.
     """
     # You can customize this logic based on your requirements.
     db_todo = Todo(
-        title=todo.title,
+        task_name=todo.task_name,
         description=todo.description,
+        due_date=todo.due_date,
         is_completed=todo.is_completed,
+        estimated_hours=todo.estimated_hours,
+        actual_hours=todo.actual_hours,
         created_at=datetime.utcnow(),
         updated_at=datetime.utcnow(),
     )

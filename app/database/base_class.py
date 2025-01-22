@@ -6,7 +6,7 @@ from sqlalchemy.orm import DeclarativeMeta
 class CustomBase:
     # Generate __tablename__ automatically
     @declared_attr
-    def __tablename__(cls):
+    def __tablename__(cls) ->str:
         return cls.__name__.lower()
 
 
